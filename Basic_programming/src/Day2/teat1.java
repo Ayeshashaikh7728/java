@@ -14,7 +14,7 @@ public class teat1 {
 	//	System.out.println(e);
 	  //  System.out.println(e1);
 		
-		java.util.ArrayList<Emp> e=new java.util.ArrayList<Emp>();
+		java.util.ArrayList<Employee> e=new java.util.ArrayList<Employee>();
 		 Scanner sc =new Scanner(System.in);
 		
 		// System.out.println("do u want to continue");
@@ -39,12 +39,12 @@ public class teat1 {
 				System.out.println("enetr the salary ");
 				int sal=sc.nextInt();
 				//System.out.println("record one");
-				e.add(new Emp(id,name,sal));
+				e.add(new Employee(id,name,sal));
 				break;
 			case 2:
 			//	System.out.println("display record");
 			//System.out.println(e);
-				for(Emp empvar: e)
+				for(Employee empvar: e)
 				{
 					System.out.println(empvar);
 				}
@@ -54,7 +54,7 @@ public class teat1 {
 				name1=sc.next();
 				for(int i = 0;i<e.size();i++)
 				{
-					if(e.get(i).getname().equals(name1))
+					if(e.get(i).getEmpName().equals(name1))
 					{
 						e.remove(i);
 						System.out.println("sucsessfully deleted________________________");
@@ -62,6 +62,7 @@ public class teat1 {
 					flag=1;
 					break;
 				}
+				
 				break;
 			case 4:
 				System.out.println("4]1)update name\n 2) update salary");
@@ -72,14 +73,14 @@ public class teat1 {
 				 for(int i=0;i<e.size();i++)
 				 { System.out.println("enter the name to be deleted");
 					String nam =sc.next();
-					if( e.get(i).getname().equals(nam))
+					if( e.get(i).getEmpName().equals(nam))
 				
 					{
 						
 						System.out.println("enetr new name to enter");
 						
 						String newnam=sc.next();
-						e.get(i).setname(newnam);
+						e.get(i).setEmpName(newnam);
 						System.out.println("name updated sucssesfully");
 						 flag2 = 1;
 						break;
@@ -96,21 +97,25 @@ public class teat1 {
 					 
 					for(int i=0;i<e.size();i++) 
 					{
-					if(e.get(i).getsal()<checksal)
+					if(e.get(i).getSalary1()<checksal)
 					{
-						e.get(i).setsal( e.get(i).setsal(e.get(i).getsal()*(incrementper/100+1)));
+						//e.get(i).setSalary1( e.get(i).setSalary(e.get(i).getSalary()*(incrementper/100+1)));
 						System.out.println("salary updated sucessesfully___________");
 						//System.out.print(e.get(i).setsal(e.get(i).getsal()*(incrementper/100+1));
 					}
 						break;
 					}
 				break;	
-				}
+				};
+				 
+		
+				
 			default:
 				System.out.println("invalid choice");
 				break;
 				
 			}
+			
 			
 			 System.out.println("do u want to continue");
 				 ch=sc.next().charAt(0) ;
